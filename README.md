@@ -1,38 +1,60 @@
-# Security Operations Case Studies
-
-This repository contains case studies demonstrating security operations, threat assessment, and incident response practices.
-
-While my focus is cyber security, these projects highlight transferable skills in threat detection, log analysis, risk assessment, adversary emulation, and compliance alignment applicable to modern enterprise environments.
+# APT34-Style Attack Emulation & Risk Assessment  
+**Technology Firm**
 
 ---
 
-## Case Studies
+## Project Overview
 
-- [Email Phishing Awareness & Security Operations Improvement (Global Payments Provider)](email-phishing.md)  
-- [APT34-Style Attack Emulation & Risk Assessment (Technology Firm)](apt34-assessment.md)
-
----
-
-## Projects Overview
-
-These case studies showcase practical security investigations and defensive improvements. They demonstrate:
-
-- Threat detection and response workflows  
-- Phishing assessment and user behaviour analysis  
-- Adversary emulation aligned to MITRE ATT&CK  
-- Forensic log analysis and detection gap identification  
-- Risk scoring and remediation planning  
-- Compliance alignment with frameworks such as NIST and ISO 27001  
-
-Each project includes the challenge, investigative approach, measurable results, and security-focused recommendations.
+This project evaluates organisational security posture through an advanced threat scenario aligned with tactics commonly associated with APT34.
+The objective was to assess detection capability, response readiness, and overall defensive maturity using adversary-informed analysis and structured risk assessment.
 
 ---
 
-## Security Skills Highlighted
+## The Challenge
 
-- Alert triage and incident investigation  
-- Log analysis and threat identification  
-- Detection gap analysis  
-- Risk assessment and control evaluation  
-- Security awareness programme improvement  
-- Adversary-informed defensive strategy  
+The assessment identified several gaps across the security environment, including:
+
+- Limited endpoint visibility  
+- Weaknesses in identity and access controls  
+- Gaps in monitoring and alerting maturity  
+- Low employee threat awareness  
+
+The organisation required a threat-informed approach to strengthen detection and response capabilities.
+
+---
+
+## Solution
+
+An adversary-style assessment was conducted to evaluate prevention, detection, and response controls.
+
+### Key Activities
+- Performed forensic log analysis to identify detection gaps  
+- Mapped observed behaviours to MITRE ATT&CK techniques  
+- Conducted structured risk scoring using a defined risk matrix  
+- Developed prioritised remediation actions based on impact and likelihood  
+
+---
+
+## Results
+
+- Reduced overall cyber risk score by **52%**  
+- Improved alignment with **NIST** and **ISO 27001** control frameworks  
+- Strengthened endpoint protection and identity security controls  
+- Established a repeatable adversary emulation approach  
+
+---
+
+## Recommendations
+
+- Deploy advanced Endpoint Detection & Response (EDR) solutions  
+- Enforce least-privilege access and multi-factor authentication  
+- Conduct regular role-based security training  
+- Perform recurring adversary-led assessments and phishing exercises  
+- Update risk assessments biannually using threat intelligence  
+
+---
+
+## Key Takeaway
+
+Adversary-informed assessments provide measurable insight into detection gaps, response maturity, and control effectiveness.
+Structured testing enables continuous improvement of security operations and supports stronger security outcomes across cloud and hybrid environments, particularly in identity, access control, monitoring, and ongoing risk management.
