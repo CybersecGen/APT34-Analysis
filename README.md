@@ -1,60 +1,90 @@
-# APT34 Threat Analysis & Risk Assessment  
-**Technology Firm**
+# APT34 Threat Analysis & SOC Simulation
+
+**Organization:** Technology Firm  
+**Project Type:** SOC Simulation / Threat Analysis  
 
 ---
 
 ## Project Overview
 
-This project evaluates organisational security posture through an advanced threat scenario aligned with tactics commonly associated with APT34.
-The objective was to assess detection capability, response readiness, and overall defensive maturity using adversary informed analysis and structured risk assessment.
+This project simulates an APT34-style attack to evaluate how a SOC would detect and respond to advanced threat behaviors.  
+Focus: **detection capability, investigation workflow, and security operations readiness** using adversary-informed scenarios.
 
 ---
 
-## The Challenge
+## Challenge
 
-The assessment identified several gaps across the security environment, including:
+Simulation identified key gaps that would impact SOC detection:
 
 - Limited endpoint visibility  
 - Weaknesses in identity and access controls  
 - Gaps in monitoring and alerting maturity  
 - Low employee threat awareness  
 
-The organisation required a threat-informed approach to strengthen detection and response capabilities.
+Objective: simulate APT34 behaviors to **strengthen detection and response processes**.
 
 ---
 
-## Solution
+## SOC Simulation & Detection Scenarios
 
-An adversary style assessment was conducted to evaluate prevention, detection, and response controls.
-
-### Key Activities
-- Performed forensic log analysis to identify detection gaps  
-- Mapped observed behaviours to MITRE ATT&CK techniques  
-- Conducted structured risk scoring using a defined risk matrix  
-- Developed prioritised remediation actions based on impact and likelihood  
-
----
-
-## Results
-
-- Reduced overall cyber risk score by **52%**  
-- Improved alignment with **NIST** and **ISO 27001** control frameworks  
-- Strengthened endpoint protection and identity security controls  
-- Established a repeatable adversary emulation approach  
+### Credential Access (Brute Force / MITRE T1110)
+- **Simulated Activity:** repeated login failures on user accounts  
+- **Detection Points:** Windows Event ID 4625, SIEM correlation  
+- **Investigation Workflow:**
+  1. Identify repeated failed logins from same source IP  
+  2. Correlate with successful logins (Event ID 4624)  
+  3. Flag suspicious accounts for investigation  
+- **IOCs:** source IP, targeted usernames  
 
 ---
 
-## Recommendations
+### Execution (Command-Line / PowerShell / MITRE T1059)
+- **Simulated Activity:** malicious process execution on endpoints  
+- **Detection Points:** Windows Event ID 4688, process command-line monitoring  
+- **Investigation Workflow:**
+  1. Review parent process and command-line arguments  
+  2. Identify unusual scripts or encoded commands  
+  3. Map to potential lateral movement attempts  
+- **IOCs:** process name, arguments, endpoint hostname  
 
-- Deploy advanced Endpoint Detection & Response (EDR) solutions  
-- Enforce least-privilege access and multi-factor authentication  
-- Conduct regular role based security training  
-- Perform recurring adversary led assessments and phishing exercises  
-- Update risk assessments biannually using threat intelligence  
+---
 
+### Privilege Escalation & Persistence
+- **Simulated Activity:** unauthorised admin group modifications  
+- **Detection Points:** Event logs for group membership changes  
+- **Investigation Workflow:**
+  1. Review new user and group changes  
+  2. Validate against expected admin activity  
+  3. Map to risk score for SOC prioritisation  
+- **IOCs:** affected accounts, hostnames  
+
+---
+
+## Detection & Response Recommendations
+
+- Implement EDR solutions (simulated endpoints)  
+- Monitor key event IDs for authentication and process anomalies  
+- Configure SIEM alerts for:
+  - Repeated login failures  
+  - Suspicious process execution  
+  - Unauthorised privilege changes  
+- Integrate adversary simulation results into SOC playbooks  
+
+---
+
+## Example Investigation Timeline (Simulation)
+
+ ```text
+ 10:00 → Multiple failed login attempts on   UserA (Event ID 4625)
+ 10:05 → Successful login from same IP (Event ID 4624)
+ 10:10 → Suspicious PowerShell process execution detected (Event ID 4688)
+ 10:15 → Admin group change simulated on endpoint Host01  
+ ```
 ---
 
 ## Key Takeaway
 
-Adversary informed assessments provide measurable insight into detection gaps, response maturity, and control effectiveness.
-Structured testing enables continuous improvement of security operations and supports stronger security outcomes across cloud and hybrid environments, particularly in identity, access control, monitoring, and ongoing risk management.
+- Adversary simulation improves SOC detection readiness and investigative workflow.
+- Mapping behaviors to MITRE ATT&CK and log events enhances threat visibility.
+- Structured simulation allows SOC teams to practice detection, correlation, and response safely.
+- Lessons learned inform endpoint visibility, alert tuning, and overall SOC effectiveness.
